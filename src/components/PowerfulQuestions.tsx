@@ -91,40 +91,44 @@ const PowerfulQuestions = () => {
           {questions.map((question, index) => (
             <div
               key={index}
-              className="group relative"
+              className="group relative h-80 [perspective:1000px]"
             >
-              {/* Carte principale */}
-              <div 
-                className="p-6 rounded-2xl shadow-lg transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-xl cursor-pointer min-h-[120px] flex items-center justify-center"
-                style={{ backgroundColor: '#57478D' }}
-              >
-                <h3 className="text-lg font-bold text-white text-center leading-tight">
-                  {question.title}
-                </h3>
-              </div>
+              {/* Container avec effet flip */}
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Face avant - Titre */}
+                <div 
+                  className="absolute inset-0 p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
+                  style={{ backgroundColor: '#57478D' }}
+                >
+                  <h3 className="text-lg font-bold text-white text-center leading-tight">
+                    {question.title}
+                  </h3>
+                </div>
 
-              {/* Questions qui apparaissent au survol */}
-              <div 
-                className="absolute top-full left-0 right-0 mt-4 p-6 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-10"
-                style={{ backgroundColor: '#F4C675' }}
-              >
-                <ul className="space-y-3">
-                  {question.bullets.map((bullet, bulletIndex) => (
-                    <li 
-                      key={bulletIndex}
-                      className="flex items-start"
-                      style={{ color: '#57478D' }}
-                    >
-                      <span 
-                        className="w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0"
-                        style={{ backgroundColor: '#57478D' }}
-                      ></span>
-                      <span className="text-sm font-medium leading-relaxed">
-                        {bullet}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Face arrière - Questions */}
+                <div 
+                  className="absolute inset-0 p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
+                  style={{ backgroundColor: '#F4C675' }}
+                >
+                  <ul className="space-y-3 h-full flex flex-col justify-center">
+                    {question.bullets.map((bullet, bulletIndex) => (
+                      <li 
+                        key={bulletIndex}
+                        className="flex items-start"
+                        style={{ color: '#57478D' }}
+                      >
+                        <span 
+                          className="w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0"
+                          style={{ backgroundColor: '#57478D' }}
+                        ></span>
+                        <span className="text-sm font-medium leading-relaxed">
+                          {bullet}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}
