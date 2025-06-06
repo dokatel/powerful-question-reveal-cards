@@ -59,6 +59,10 @@ const PowerfulQuestions = () => {
     }
   ];
 
+  // Calculate the maximum number of questions to determine card height
+  const maxQuestions = Math.max(...questions.map(q => q.bullets.length));
+  const cardHeight = Math.max(400, maxQuestions * 50 + 120); // Base height + space for each question
+
   return (
     <section style={{ backgroundColor: '#F0F1F9' }} className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -91,7 +95,8 @@ const PowerfulQuestions = () => {
           {questions.map((question, index) => (
             <div
               key={index}
-              className="group relative h-80 [perspective:1000px]"
+              className="group relative [perspective:1000px]"
+              style={{ height: `${cardHeight}px` }}
             >
               {/* Container avec effet flip */}
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
