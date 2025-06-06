@@ -4,39 +4,57 @@ import React from 'react';
 const PowerfulQuestions = () => {
   const questions = [
     {
-      title: "Questions de découverte",
+      title: "🌟 Abondance et Réalisation",
       bullets: [
-        "Qu'est-ce qui vous passionne vraiment ?",
-        "Quels sont vos plus grands défis actuels ?",
-        "Que feriez-vous si vous étiez certain de réussir ?",
-        "Qu'est-ce qui vous empêche d'agir maintenant ?"
+        "Comment attirer davantage d'abondance dans ma vie ?",
+        "Que dois-je faire pour débloquer mon potentiel d'abondance ?",
+        "Quelle leçon devrais-je apprendre pour avancer ?",
+        "Que puis-je faire concrètement pour améliorer mon bien-être quotidien ?",
+        "Que puis-je attendre de ce prochain trimestre dans ma vie ?"
       ]
     },
     {
-      title: "Questions de réflexion",
+      title: "💔 Relations et Vie Amoureuse",
       bullets: [
-        "Que vous dit votre intuition ?",
-        "Comment cette situation vous fait-elle grandir ?",
-        "Quelles leçons pouvez-vous en tirer ?",
-        "Qu'est-ce qui est vraiment important pour vous ?"
+        "Pourquoi suis-je encore célibataire ? Qu'est-ce qui m'en empêche ?",
+        "Comment puis-je attirer mon âme sœur dans ma vie ?",
+        "Pourquoi me retrouve-je toujours dans des relations similaires ?",
+        "Ma relation avec [X] est-elle saine ? Comment la renforcer ?",
+        "Pourquoi est-ce que je suis toujours célibataire ?"
       ]
     },
     {
-      title: "Questions d'action",
+      title: "🌿 Blessures, Blocages et Émotions",
       bullets: [
-        "Quelle est la première étape concrète ?",
-        "De quoi avez-vous besoin pour avancer ?",
-        "Qui pourrait vous accompagner ?",
-        "Comment mesurerez-vous vos progrès ?"
+        "Comment retrouver la confiance en moi ?",
+        "Comment puis-je me libérer de mes blessures passées ?",
+        "Quelles croyances limitantes m'empêchent d'avancer sereinement ?",
+        "Pourquoi me sens-je triste ou fatigué(e) en ce moment ?",
+        "D'où proviennent mes blessures profondes ?",
+        "Comment retrouver la paix intérieure et apaiser mon esprit ?",
+        "Comment puis-je couper les liens toxiques avec une personne spécifique ?"
       ]
     },
     {
-      title: "Questions de perspective",
+      title: "🔮 Spiritualité, Intuition et Mission",
       bullets: [
-        "Comment verriez-vous cela dans 5 ans ?",
-        "Que feriez-vous à la place de votre mentor ?",
-        "Quelles opportunités cachées voyez-vous ?",
-        "Comment transformer ce défi en force ?"
+        "Quelle est la prochaine étape dans mon cheminement spirituel ?",
+        "Comment augmenter mon taux vibratoire pour attirer le positif ?",
+        "Comment puis-je me reconnecter plus profondément à mon âme ?",
+        "De quoi mon âme a-t-elle réellement besoin en ce moment ?",
+        "Quel est le nœud karmique qui me freine dans mon évolution ?",
+        "Quel message mes guides spirituels souhaitent-ils que je reçoive ?",
+        "Quelle est ma véritable mission dans la vie ?",
+        "Suis-je sur la bonne voie actuellement ?"
+      ]
+    },
+    {
+      title: "🧭 Clarté, Décision et Alignement",
+      bullets: [
+        "Que puis-je faire pour sortir de cette période de stagnation ?",
+        "Comment être plus efficace et aligné(e) dans mon travail ?",
+        "Mon travail actuel est-il vraiment aligné avec mes aspirations ?",
+        "Que puis-je faire pour avancer sereinement dans la direction que je désire ?"
       ]
     }
   ];
@@ -49,17 +67,27 @@ const PowerfulQuestions = () => {
             className="text-4xl md:text-5xl font-bold mb-6"
             style={{ color: '#57478D' }}
           >
-            Bonus n°3 : Questions Puissantes
+            🎁 BONUS N°3 : QUESTIONS PUISSANTES
           </h2>
-          <p 
-            className="text-xl max-w-3xl mx-auto"
+          <div 
+            className="text-lg max-w-4xl mx-auto mb-8 space-y-4"
             style={{ color: '#57478D' }}
           >
-            Découvrez des questions transformatrices qui révèlent des insights profonds
-          </p>
+            <p className="font-medium">
+              Ces questions sont conçues pour t'aider à développer une connexion plus profonde avec ton oracle, renforcer ton intuition et obtenir des réponses claires et éclairantes.
+            </p>
+            <div className="text-left max-w-2xl mx-auto">
+              <p className="font-semibold mb-2">💡 Utilise-les :</p>
+              <ul className="space-y-1 text-base">
+                <li>• Avant un tirage, pour poser une question précise</li>
+                <li>• En séance, pour explorer une problématique</li>
+                <li>• En auto-tirage, pour te recentrer ou progresser</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {questions.map((question, index) => (
             <div
               key={index}
@@ -67,15 +95,15 @@ const PowerfulQuestions = () => {
             >
               {/* Carte principale */}
               <div 
-                className="p-8 rounded-2xl shadow-lg transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-xl cursor-pointer"
+                className="p-6 rounded-2xl shadow-lg transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-xl cursor-pointer min-h-[120px] flex items-center justify-center"
                 style={{ backgroundColor: '#57478D' }}
               >
-                <h3 className="text-xl font-bold text-white text-center">
+                <h3 className="text-lg font-bold text-white text-center leading-tight">
                   {question.title}
                 </h3>
               </div>
 
-              {/* Bullets points qui apparaissent au survol */}
+              {/* Questions qui apparaissent au survol */}
               <div 
                 className="absolute top-full left-0 right-0 mt-4 p-6 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-10"
                 style={{ backgroundColor: '#F4C675' }}
@@ -102,30 +130,24 @@ const PowerfulQuestions = () => {
           ))}
         </div>
 
-        {/* Section d'appel à l'action */}
-        <div className="text-center mt-16">
+        {/* Section d'astuce */}
+        <div className="text-center">
           <div 
-            className="inline-block p-8 rounded-2xl shadow-lg"
+            className="inline-block p-8 rounded-2xl shadow-lg max-w-4xl"
             style={{ backgroundColor: '#F4C675' }}
           >
             <h3 
               className="text-2xl font-bold mb-4"
               style={{ color: '#57478D' }}
             >
-              Prêt à transformer votre approche ?
+              💬 Astuce EF
             </h3>
             <p 
-              className="text-lg mb-6"
+              className="text-lg leading-relaxed"
               style={{ color: '#57478D' }}
             >
-              Ces questions puissantes sont vos clés vers de nouveaux insights
+              Tire une carte par question ou choisis une thématique par semaine pour nourrir ta pratique et explorer tes véritables réponses intérieures.
             </p>
-            <button 
-              className="px-8 py-4 rounded-xl font-bold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
-              style={{ backgroundColor: '#57478D' }}
-            >
-              Commencer maintenant
-            </button>
           </div>
         </div>
       </div>
