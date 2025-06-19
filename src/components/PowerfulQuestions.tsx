@@ -91,8 +91,8 @@ const PowerfulQuestions = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {questions.map((question, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+          {questions.slice(0, 4).map((question, index) => (
             <div
               key={index}
               className="group relative [perspective:1000px]"
@@ -137,6 +137,52 @@ const PowerfulQuestions = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Cinquième carte centrée */}
+        <div className="flex justify-center mb-16">
+          <div
+            className="group relative [perspective:1000px] w-full max-w-md"
+            style={{ height: `${cardHeight}px` }}
+          >
+            {/* Container avec effet flip */}
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Face avant - Titre */}
+              <div 
+                className="absolute inset-0 p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
+                style={{ backgroundColor: '#57478D' }}
+              >
+                <h3 className="text-lg font-bold text-white text-center leading-tight">
+                  {questions[4].title}
+                </h3>
+              </div>
+
+              {/* Face arrière - Questions */}
+              <div 
+                className="absolute inset-0 p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
+                style={{ backgroundColor: '#F4C675' }}
+              >
+                <ul className="space-y-3 h-full flex flex-col justify-center">
+                  {questions[4].bullets.map((bullet, bulletIndex) => (
+                    <li 
+                      key={bulletIndex}
+                      className="flex items-start"
+                      style={{ color: '#57478D' }}
+                    >
+                      <span 
+                        className="w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0"
+                        style={{ backgroundColor: '#57478D' }}
+                      ></span>
+                      <span className="text-sm font-medium leading-relaxed">
+                        {bullet}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Section d'astuce */}
