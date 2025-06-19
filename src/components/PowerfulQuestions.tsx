@@ -95,7 +95,9 @@ const PowerfulQuestions = () => {
           {questions.map((question, index) => (
             <div
               key={index}
-              className="group relative [perspective:1000px]"
+              className={`group relative [perspective:1000px] ${
+                index === 4 ? 'lg:col-start-2' : ''
+              }`}
               style={{ height: `${cardHeight}px` }}
             >
               {/* Container avec effet flip */}
