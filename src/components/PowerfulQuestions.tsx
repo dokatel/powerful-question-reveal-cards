@@ -59,22 +59,18 @@ const PowerfulQuestions = () => {
     }
   ];
 
-  // Calculate the maximum number of questions to determine card height
-  const maxQuestions = Math.max(...questions.map(q => q.bullets.length));
-  const cardHeight = Math.max(400, maxQuestions * 50 + 120); // Base height + space for each question
-
   return (
-    <section style={{ backgroundColor: '#F0F1F9' }} className="py-20 px-6">
+    <section style={{ backgroundColor: '#F0F1F9' }} className="py-8 sm:py-12 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
             style={{ color: '#57478D' }}
           >
             🎁 BONUS N°3 : QUESTIONS PUISSANTES
           </h2>
           <div 
-            className="text-lg max-w-4xl mx-auto mb-8 space-y-4"
+            className="text-sm sm:text-base md:text-lg max-w-4xl mx-auto mb-6 sm:mb-8 space-y-3 sm:space-y-4"
             style={{ color: '#57478D' }}
           >
             <p className="font-medium">
@@ -82,7 +78,7 @@ const PowerfulQuestions = () => {
             </p>
             <div className="text-left max-w-2xl mx-auto">
               <p className="font-semibold mb-2">💡 Utilise-les :</p>
-              <ul className="space-y-1 text-base">
+              <ul className="space-y-1 text-sm sm:text-base">
                 <li>• Avant un tirage, pour poser une question précise</li>
                 <li>• En séance, pour explorer une problématique</li>
                 <li>• En auto-tirage, pour te recentrer ou progresser</li>
@@ -91,32 +87,31 @@ const PowerfulQuestions = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
           {questions.slice(0, 4).map((question, index) => (
             <div
               key={index}
-              className="group relative [perspective:1000px]"
-              style={{ height: `${cardHeight}px` }}
+              className="group relative [perspective:1000px] h-64 sm:h-80 md:h-96"
             >
               {/* Container avec effet flip */}
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
                 {/* Face avant - Titre */}
                 <div 
-                  className="absolute inset-0 p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
+                  className="absolute inset-0 p-4 sm:p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
                   style={{ backgroundColor: '#57478D' }}
                 >
-                  <h3 className="text-lg font-bold text-white text-center leading-tight">
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white text-center leading-tight">
                     {question.title}
                   </h3>
                 </div>
 
                 {/* Face arrière - Questions */}
                 <div 
-                  className="absolute inset-0 p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
+                  className="absolute inset-0 p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
                   style={{ backgroundColor: '#F4C675' }}
                 >
-                  <ul className="space-y-3 h-full flex flex-col justify-center">
+                  <ul className="space-y-1 sm:space-y-2 md:space-y-3 h-full flex flex-col justify-center">
                     {question.bullets.map((bullet, bulletIndex) => (
                       <li 
                         key={bulletIndex}
@@ -124,10 +119,10 @@ const PowerfulQuestions = () => {
                         style={{ color: '#57478D' }}
                       >
                         <span 
-                          className="w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0"
+                          className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 sm:mr-3 mt-1 sm:mt-2 flex-shrink-0"
                           style={{ backgroundColor: '#57478D' }}
                         ></span>
-                        <span className="text-sm font-medium leading-relaxed">
+                        <span className="text-xs sm:text-sm font-medium leading-relaxed">
                           {bullet}
                         </span>
                       </li>
@@ -140,30 +135,29 @@ const PowerfulQuestions = () => {
         </div>
 
         {/* Cinquième carte centrée */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-8 sm:mb-12 md:mb-16">
           <div
-            className="group relative [perspective:1000px] w-full max-w-md"
-            style={{ height: `${cardHeight}px` }}
+            className="group relative [perspective:1000px] w-full max-w-md h-64 sm:h-80 md:h-96"
           >
             {/* Container avec effet flip */}
             <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               
               {/* Face avant - Titre */}
               <div 
-                className="absolute inset-0 p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
+                className="absolute inset-0 p-4 sm:p-6 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden]"
                 style={{ backgroundColor: '#57478D' }}
               >
-                <h3 className="text-lg font-bold text-white text-center leading-tight">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-white text-center leading-tight">
                   {questions[4].title}
                 </h3>
               </div>
 
               {/* Face arrière - Questions */}
               <div 
-                className="absolute inset-0 p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
+                className="absolute inset-0 p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto"
                 style={{ backgroundColor: '#F4C675' }}
               >
-                <ul className="space-y-3 h-full flex flex-col justify-center">
+                <ul className="space-y-1 sm:space-y-2 md:space-y-3 h-full flex flex-col justify-center">
                   {questions[4].bullets.map((bullet, bulletIndex) => (
                     <li 
                       key={bulletIndex}
@@ -171,10 +165,10 @@ const PowerfulQuestions = () => {
                       style={{ color: '#57478D' }}
                     >
                       <span 
-                        className="w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0"
+                        className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 sm:mr-3 mt-1 sm:mt-2 flex-shrink-0"
                         style={{ backgroundColor: '#57478D' }}
                       ></span>
-                      <span className="text-sm font-medium leading-relaxed">
+                      <span className="text-xs sm:text-sm font-medium leading-relaxed">
                         {bullet}
                       </span>
                     </li>
@@ -188,17 +182,17 @@ const PowerfulQuestions = () => {
         {/* Section d'astuce */}
         <div className="text-center">
           <div 
-            className="inline-block p-8 rounded-2xl shadow-lg max-w-4xl"
+            className="inline-block p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg max-w-4xl"
             style={{ backgroundColor: '#F4C675' }}
           >
             <h3 
-              className="text-2xl font-bold mb-4"
+              className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4"
               style={{ color: '#57478D' }}
             >
               💬 Astuce EF
             </h3>
             <p 
-              className="text-lg leading-relaxed"
+              className="text-sm sm:text-base md:text-lg leading-relaxed"
               style={{ color: '#57478D' }}
             >
               Tire une carte par question ou choisis une thématique par semaine pour nourrir ta pratique et explorer tes véritables réponses intérieures.
